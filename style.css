@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+    overflow-x: hidden;
+    /* box-sizing: border-box; */
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon {
+    mix-blend-mode: screen;
+}
+
+#text {
+    position: absolute;
+    right: -100px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 6vw;
+    z-index: 9;
+}
+
+section img#mountains_front {
+    z-index: 10;
+}
+
+#btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 9px 27px;
+    border-radius: 39px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    box-shadow: 0 0 9px 3px #2b1055;
+    transform: translateY(100px);
+}
+
+.story {
+    position: relative;
+    padding: 100px;
+   
+}
+
+ h2 {
+    font-size: 3.3em;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color:transparent;
+}
+
+
+
+
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1001;
+}
+section.flip {
+    height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
+    background: #1c0522;
+    background-image: url(space.jpg);
+    background-size: cover;
+    background-position: center;
+
+
+}
+.book{
+    
+    position: relative;
+    width:350px;
+    height:500px;
+    transition: transform 0.5s;
+
+}
+.paper{
+    
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    perspective:1500px;
+}
+.front,
+.back{
+    background-color:white;
+    background-image: url(cover.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width:100%;
+    height :100%;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin:left ;
+    transition:transform 0.5s ;
+}
+.front{
+    z-index:1;
+    backface-visibility: hidden;
+    border:3px solid black ;
+}
+.back{
+    z-index:0;
+}
+.front-content,
+.back-content {
+    width:100%;
+    height:100%;
+    color:black;
+    font-family: cursive;
+    display:flex;
+    flex-direction: column;
+    justify-content:right;
+    align-items:right;
+}
+.back-content {
+    transform: rotateY(180deg);
+}
+
+/* paper flip */
+.flipped .front,
+.flipped .back{
+   transform: rotateY(-180deg); 
+}
+/* controller buttons  */
+button{
+    border:none;
+    background-color: transparent;
+    cursor:pointer;
+    margin:10px;
+    transition: transform 0.5s;
+}
+
+button :focus{
+    outline: none;
+}
+button:hover i {
+    color: #636363;
+}
+i  {
+    font-size:50px;
+    color:gray;
+}
+/* paper stack */
+#p1{
+    z-index:3;
+}
+#p2{
+    z-index: 2;
+}
+#p3{
+    z-index: 1;
+}
+.image{
+    background-image: url("wtt.jpg");
+    background-size: cover;
+    background-position: center;
+    width:350px;
+    height: 500px;
+
+}
+.cab{
+    background-image: url("thh.jpg");
+    background-size: cover;
+    background-position: center;
+    width:350px;
+    height: 500px;
+}
